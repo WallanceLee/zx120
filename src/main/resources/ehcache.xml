@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ehcache>
+    <diskStore path = "java.io.tmpdir"/>
+    <!--&lt;!&ndash; 注意，以下缓存是永久有效，是系统初始化数据到缓存中，如果不需要永久有效，请另写，或在 &ndash;&gt;-->
+    <cache name = "cache_forever"
+           maxEntriesLocalHeap = "10000"
+           maxEntriesLocalDisk = "1000"
+           eternal = "true"
+           diskSpoolBufferSizeMB = "20"
+           timeToIdleSeconds = "0"
+           timeToLiveSeconds = "0"
+           memoryStoreEvictionPolicy = "LFU"
+           transactionalMode = "off">
+    </cache>
+
+
+    <!--&lt;!&ndash; 登录记录缓存 锁定10分钟 &ndash;&gt;-->
+    <cache name = "passwordRetryCache"
+           maxEntriesLocalHeap = "2000"
+           eternal = "false"
+           timeToIdleSeconds = "300"
+           timeToLiveSeconds = "0"
+           overflowToDisk = "false"
+           statistics = "true">
+    </cache>
+
+    <cache name = "tokenCache"
+           maxEntriesLocalHeap = "2000"
+           eternal = "false"
+           timeToIdleSeconds = "18000"
+           timeToLiveSeconds = "0"
+           overflowToDisk = "false"
+           statistics = "true">
+    </cache>
+
+    <!--&lt;!&ndash; 授权和认证都使用的这个缓存 &ndash;&gt;-->
+    <cache name = "shiroCache"
+           maxEntriesLocalHeap = "2000"
+           eternal = "false"
+           timeToIdleSeconds = "0"
+           timeToLiveSeconds = "0"
+           overflowToDisk = "false"
+           statistics = "true">
+    </cache>
+
+    <!--&lt;!&ndash; shiro需要session的时候使用这个缓存 &ndash;&gt;-->
+    <cache name = "shiroSessionCache"
+           maxEntriesLocalHeap = "2000"
+           eternal = "false"
+           timeToIdleSeconds = "3600"
+           timeToLiveSeconds = "0"
+           overflowToDisk = "false"
+           statistics = "true">
+    </cache>
+
+    <!--&lt;!&ndash; mybatis的缓存都使用这个 &ndash;&gt;-->
+    <!--<defaultCache name = "mybatisCache"-->
+                  <!--maxEntriesLocalHeap = "2000"-->
+                  <!--eternal = "false"-->
+                  <!--timeToIdleSeconds = "3600"-->
+                  <!--timeToLiveSeconds = "0"-->
+                  <!--overflowToDisk = "false"-->
+                  <!--statistics = "true">-->
+    <!--</defaultCache>-->
+</ehcache>

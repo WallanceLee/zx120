@@ -1,0 +1,239 @@
+<project xmlns = "http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.edu.njupt</groupId>
+  <artifactId>zx120</artifactId>
+  <packaging>war</packaging>
+  <version>1.0</version>
+  <name>zx120 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <repositories>
+    <repository>
+      <id>aliyun-nexus</id>
+      <name>Nexus</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>aliyun-nexus</id>
+      <name>Nexus</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <properties>
+    <springframework.version>4.3.6.RELEASE</springframework.version>
+    <aspectj.version>1.8.10</aspectj.version>
+    <shiro.version>1.2.4</shiro.version>
+    <hibernate.version>5.2.7.Final</hibernate.version>
+    <mysql.version>6.0.5</mysql.version>
+    <logback.version>1.1.7</logback.version>
+    <slf4j.version>1.7.21</slf4j.version>
+    <junit.version>4.12</junit.version>
+    <servlet.version>3.1.0</servlet.version>
+    <jstl.version>1.2</jstl.version>
+    <taglib-standard.version>1.1.2</taglib-standard.version>
+    <fastjson.version>1.2.7</fastjson.version>
+    <poi.version>3.16</poi.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>${springframework.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>${aspectj.version}</version>
+    </dependency>
+
+    <!-- log -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+
+    <!-- spring -->
+    <!-- core dependency -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+
+    <!-- hibernate integration -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+
+    <!-- dao -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+
+    <!-- web -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+
+    <!-- unit test -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- aop -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+
+    <!-- shiro和spring集成 -->
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-spring</artifactId>
+      <version>${shiro.version}</version>
+    </dependency>
+
+    <!-- shiro和ehcache集成 -->
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-ehcache</artifactId>
+      <version>${shiro.version}</version>
+    </dependency>
+
+    <!-- mysql connector -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.version}</version>
+    </dependency>
+
+    <!-- servlet -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet.version}</version>
+    </dependency>
+
+    <!-- jstl -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${jstl.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>${taglib-standard.version}</version>
+    </dependency>
+
+    <!-- json -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson.version}</version>
+    </dependency>
+
+    <!-- hibernate -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-c3p0</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-ehcache</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+
+    <!-- Excel操作库 -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>${poi.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>zx120</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
