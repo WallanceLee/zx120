@@ -83,11 +83,11 @@ public class RealTimeController extends BaseController {
             ambulanceResource.setResourceOutNumber(ambulanceResource.getResourceTotalNumber()  - ambulanceResource.getResourceRemainNumber());
             orgResourceDto.setAmbulanceResource(ambulanceResource);
 
-            ResourceDescriptorDto memberResource = new ResourceDescriptorDto();
-            memberResource.setResourceTotalNumber(memberService.queryByOrdId(orgResourceDto.getOrg().getOrgId()).size());
-            memberResource.setResourceRemainNumber(memberService.queryAvailableByOrgId(organizationDto.getOrgId()).size());
-            memberResource.setResourceOutNumber(memberService.queryOutByOrgId(organizationDto.getOrgId()).size());
-            orgResourceDto.setMemberResource(memberResource);
+//            ResourceDescriptorDto memberResource = new ResourceDescriptorDto();
+//            memberResource.setResourceTotalNumber(memberService.queryByOrdId(orgResourceDto.getOrg().getOrgId()).size());
+//            memberResource.setResourceRemainNumber(memberService.queryAvailableByOrgId(organizationDto.getOrgId()).size());
+//            memberResource.setResourceOutNumber(memberService.queryOutByOrgId(organizationDto.getOrgId()).size());
+//            orgResourceDto.setMemberResource(memberResource);
 
             orgResourceDtos.add(orgResourceDto);
 
