@@ -55,4 +55,5 @@ public class RestAuthFilter extends AccessControlFilter {
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         httpServletResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
     }
+
 }
