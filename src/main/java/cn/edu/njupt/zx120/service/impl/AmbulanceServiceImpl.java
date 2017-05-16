@@ -227,7 +227,7 @@ public class AmbulanceServiceImpl implements AmbulanceService {
         session.close();
 
 //        // 查询所有的车辆信息
-//        List<AmbulanceModel> ambulanceModels = queryAll();
+//        List<AmbulanceModel> ambulanceModels = queryLatestTenRecords();
 //
 //        List<AmbulanceDynamicDto> ambulanceDynamicDtos = new ArrayList<>();
 //

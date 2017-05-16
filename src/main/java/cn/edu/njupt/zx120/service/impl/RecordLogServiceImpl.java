@@ -20,9 +20,9 @@ public class RecordLogServiceImpl implements RecordLogService {
     private RecordLogDao recordLogDao;
 
     @Override
-    public List<RecordLogDto> queryAll() {
+    public List<RecordLogDto> queryLatestTenRecords() {
         List<RecordLogDto> recordLogDtos = new ArrayList<>();
-        List<RecordLogModel> recordLogModels = recordLogDao.queryAll();
+        List<RecordLogModel> recordLogModels = recordLogDao.queryLatestTenRecords();
         for (RecordLogModel recordLogModel : recordLogModels) {
             RecordLogDto recordLogDto = new RecordLogDto();
             recordLogDto.setReaderId(recordLogModel.getReaderId());

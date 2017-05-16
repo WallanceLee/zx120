@@ -112,7 +112,7 @@ public class RealTimeController extends BaseController {
 
     @RequestMapping(value = "/originalRecord", method = RequestMethod.GET)
     public Map getOriginalRecord() {
-        List<RecordLogDto> recordLogDtos = recordLogService.queryAll();
+        List<RecordLogDto> recordLogDtos = recordLogService.queryLatestTenRecords();
         return resultMap(true, recordLogDtos);
     }
 

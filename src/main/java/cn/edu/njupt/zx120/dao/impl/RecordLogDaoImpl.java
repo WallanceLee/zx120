@@ -15,11 +15,13 @@ import java.util.List;
 public class RecordLogDaoImpl extends AbstractDao<Integer, RecordLogModel> implements RecordLogDao {
 
     @Override
-    public List<RecordLogModel> queryAll() {
+    public List<RecordLogModel> queryLatestTenRecords() {
         Session session = getSession();
         session.beginTransaction();
         List<RecordLogModel> recordLogModels = session
-                .createQuery("from RecordLogModel recordLogModel order by recordLogModel.storeTime desc", RecordLogModel.class)
+                .createQuery("from RecordLogModel recordLogModel " +
+                        "order by recordLogModel.id desc",
+                        RecordLogModel.class)
                 .setMaxResults(10)
                 .getResultList();
         session.getTransaction().commit();

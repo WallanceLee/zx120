@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface RecordLogDao {
 
-    List<RecordLogModel> queryAll();
+    List<RecordLogModel> queryLatestTenRecords();
 
 }
