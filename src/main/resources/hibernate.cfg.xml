@@ -6,10 +6,15 @@
   <session-factory>
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="connection.url">jdbc:mysql://10.128.1.179:3306/zx120_test</property>
+<<<<<<< HEAD
     <!--<property name="connection.url">jdbc:mysql://127.0.0.1:3306/zx120_test</property>-->
     <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
     <property name="connection.username">root</property>
     <!--<property name="connection.password">h8kh3eg</property>-->
+=======
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <property name="connection.username">root</property>
+>>>>>>> 6edc90f... Use our database for test.
     <property name="connection.password">123456</property>
     <property name="hbm2ddl.auto">update</property>
     <property name="show_sql">true</property>
