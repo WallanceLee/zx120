@@ -3,8 +3,10 @@ package cn.edu.njupt.zx120.service;
 import cn.edu.njupt.zx120.dto.admin.AmbulanceBindingInfoDto;
 import cn.edu.njupt.zx120.dto.serviceManage.AmbulanceDynamicDto;
 import cn.edu.njupt.zx120.dto.serviceManage.AmbulanceStockDto;
+import cn.edu.njupt.zx120.dto.serviceManage.AmbulanceStockDto2;
 import cn.edu.njupt.zx120.model.AmbulanceModel;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,6 +38,22 @@ public interface AmbulanceService {
     void scanResourceInCar(String carId);
 
     List<AmbulanceDynamicDto> queryAllDynamicInfo();
+
+    List<AmbulanceDynamicDto> queryDynamicInfoByCondition(Long containerId, String carBrand,
+                                                          Date startTime, Date endTime,
+                                                          Integer startIndex, Integer pageSize);
+
+    long queryDynamicInfoTotalByCondition(Long containerId, String carBrand,
+                                          Date startTime, Date endTime,
+                                          Integer startIndex, Integer pageSize);
+
+    List<AmbulanceStockDto2> queryStock2InfoByCondition(String orgId,
+                                                        Date startTime, Date endTime,
+                                                        Integer startIndex, Integer pageSize);
+
+    long queryStock2InfoTotalByCondition(String orgId,
+                                         Date startTime, Date endTime,
+                                         Integer startIndex, Integer pageSize);
 
     List<AmbulanceStockDto> queryAllStockInfo();
 
