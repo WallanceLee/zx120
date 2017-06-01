@@ -318,7 +318,7 @@ public class AmbulanceServiceImpl implements AmbulanceService {
         final int defaultStartIndex = 0;
         final int defaultPageSize = 50;
         int conditionCode = ((containerId != null ? 1 : 0) << 3)
-                + ((carBrand != null ? 1 : 0) << 2)
+                + ((carBrand != null && (!carBrand.equals("")) ? 1 : 0) << 2)
                 + ((startTime != null ? 1 : 0) << 1)
                 + (endTime != null ? 1 : 0);
         // 按照containerId carBrand startTime endTime查找
@@ -593,7 +593,7 @@ public class AmbulanceServiceImpl implements AmbulanceService {
         Session session = getSession();
         session.beginTransaction();
         int conditionCode = ((containerId != null ? 1 : 0) << 3)
-                + ((carBrand != null ? 1 : 0) << 2)
+                + ((carBrand != null && (!carBrand.equals("")) ? 1 : 0) << 2)
                 + ((startTime != null ? 1 : 0) << 1)
                 + (endTime != null ? 1 : 0);
         // 按照containerId carBrand startTime endTime查找
