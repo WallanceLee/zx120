@@ -8,7 +8,6 @@ import cn.edu.njupt.zx120.model.ResourceBindingModel;
 import cn.edu.njupt.zx120.model.ResourceTableTypeEnum;
 import cn.edu.njupt.zx120.model.ResourceTypeEnum;
 import cn.edu.njupt.zx120.service.ResourceBindingService;
-import jdk.management.resource.ResourceType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
